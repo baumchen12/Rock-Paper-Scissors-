@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    td {
+      width: 25%;
+      text-align: center;
+      padding: 10px;
+    }
+    button {
+      background-color: #E8E8E8;
+      padding: 10px;
+    }
+  </style>
+  <script>
+    var handpics = ["rockhand.jpg", "paperhand.jpg", "scissorshand.jpg"];
+    function addColor(obj) {
+      obj.style.backgroundColor = "purple";
+    }
+    function removeColor(obj) {
+      obj.style.backgroundColor = "#E8E8E8";
+    }
+    function displayResult(obj) {
+        var you = obj.id;
+        document.images[3].src= handpics[you];
+    }
+      function displayResult(you, me) {
+document.images[3].src = handpics[you];
+document.images[4].src = handpics[me]
+}
+function chooseAndDisplay(obj) {
+var you = obj.id;
+var me = Math.floor(Math.random() * 3);
+displayResult(you, me);
+}
+      
+      if ( you == me )
+return "tie";
+else if ( (you + 1) % 3 == me )
+return "me";
+else if ( (me + 1) % 3 == you )
+return "you";
+else
+return "error"; // shouldn't happen
+      
+  </script>
+</head>
+<body>
+  <h1>Rock, Paper, Scissors</h1>
+  <table>
+    <tr>
+      <td><h1>Choose...</h1></td>
+      <td>
+        <button type="button" id="0" onmouseover="addColor(this)"
+                onmouseout="removeColor(this)" 
+                onclick="displayResult(this)">
+          <image src="rock.jpg" alt="ROCK"></image>
+        </button>
+      </td>
+      <td>
+        <button type="button" id="1" onmouseover="addColor(this)"
+                onmouseout="removeColor(this)"
+                onclick="displayResult(this)">
+          <image src="paper.jpg" alt="PAPER"></image>
+        </button>
+      </td>
+      <td>
+        <button type="button" id="2" onmouseover="addColor(this)"
+                onmouseout="removeColor(this)"
+                onclick="displayResult(this)">
+          <image src="scissors.jpg" alt="SCISSORS"></image>
+        </button> 
+      </td>
+    </tr>
+      <tr>
+      <td><h1>You...</h1></td>
+      <td></td>
+      <td><h1>Me...</h1></td>
+      <td></td>
+      </tr>
+  </table>
+
+</body>
+</html>
